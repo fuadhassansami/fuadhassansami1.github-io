@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fuad Hassan - Graphic Designer</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Clash Display & Satoshi -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+    
+    <!-- Custom Styles -->
+    <style>
+        body {
+            font-family: 'Satoshi', sans-serif;
+            background-color: #111827; /* Dark Blue-Gray Background */
+            color: #E5E7EB; /* Light Gray Text */
+        }
+        h1, h2, h3 {
+            font-family: 'Clash Display', sans-serif;
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #38bdf8, #818cf8, #c084fc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .nav-link {
+            transition: color 0.3s ease;
+        }
+        .nav-link:hover {
+            color: #38bdf8;
+        }
+        .skill-card, .project-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .skill-card:hover, .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(56, 189, 248, 0.1), 0 4px 6px -2px rgba(56, 189, 248, 0.05);
+        }
+        /* Scrollbar styling */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1F2937;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #38bdf8;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #0ea5e9;
+        }
+        /* Modal styles */
+        .modal {
+            transition: opacity 0.25s ease;
+        }
+        .modal-clickable {
+            cursor: pointer;
+        }
+
+        /* --- Animated Gradient Text for Name --- */
+        @keyframes text-gradient-animation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .animated-gradient-text {
+            background: linear-gradient(90deg, #38bdf8, #818cf8, #c084fc, #f472b6, #38bdf8);
+            background-size: 250% 250%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: text-gradient-animation 8s ease infinite;
+            transition: transform 0.3s ease;
+        }
+
+        .animated-gradient-text:hover {
+            transform: scale(1.03);
+            animation-duration: 4s; /* Speed up animation on hover */
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header & Navigation -->
+    <header class="bg-gray-900/80 backdrop-blur-sm fixed top-0 left-0 right-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#home" class="text-2xl font-bold gradient-text">FH</a>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#about" class="nav-link text-gray-300">About</a>
+                <a href="#skills" class="nav-link text-gray-300">Skills</a>
+                <a href="#projects" class="nav-link text-gray-300">Projects</a>
+                <a href="#contact" class="nav-link text-gray-300">Contact</a>
+            </nav>
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden text-gray-300 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden">
+            <a href="#about" class="block py-2 px-6 text-gray-300 hover:bg-gray-800">About</a>
+            <a href="#skills" class="block py-2 px-6 text-gray-300 hover:bg-gray-800">Skills</a>
+            <a href="#projects" class="block py-2 px-6 text-gray-300 hover:bg-gray-800">Projects</a>
+            <a href="#contact" class="block py-2 px-6 text-gray-300 hover:bg-gray-800">Contact</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6">
+
+        <!-- Home Section -->
+        <section id="home" class="min-h-screen flex items-center justify-center text-center">
+            <div class="space-y-4">
+                <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight animated-gradient-text">
+                    Fuad Hassan
+                </h1>
+                <p class="text-xl md:text-2xl gradient-text font-semibold">
+                    Graphic Designer & Digital Artist
+                </p>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-20 lg:py-32">
+            <div class="grid md:grid-cols-5 gap-12 items-center">
+                <div class="md:col-span-2">
+                    <img src="https://placehold.co/400x400/1F2937/E5E7EB?text=Fuad" alt="Fuad Hassan" class="rounded-lg shadow-2xl w-full">
+                </div>
+                <div class="md:col-span-3 space-y-6">
+                    <h2 class="text-4xl font-bold animated-gradient-text">About Me</h2>
+                    <p class="text-lg text-gray-400">
+                        Hello! I'm Fuad Hassan, a passionate and creative graphic designer dedicated to crafting compelling visual narratives. My design philosophy is rooted in the belief that great design is not just about aesthetics, but about clear communication and creating a memorable experience.
+                    </p>
+                    <p class="text-lg text-gray-400">
+                        From brand identities and digital illustrations to video editing and marketing materials, I thrive on turning complex ideas into simple, beautiful, and intuitive designs. I'm constantly exploring new techniques and technologies to push the boundaries of my creativity and deliver work that truly resonates.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-20 lg:py-32 text-center">
+            <h2 class="text-4xl font-bold mb-12 animated-gradient-text">My Toolkit</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
+                
+                <!-- Illustrator -->
+                <div id="skill-illustrator" class="skill-card bg-gray-800 p-8 rounded-lg flex items-center justify-center modal-clickable" 
+                     data-image-src="https://i.imgur.com/CgNLwWO.png" 
+                     data-title="Adobe Illustrator"
+                     data-description="I use Adobe Illustrator for all my vector-based work, including logo design, icons, and complex illustrations. Its precision tools allow me to create scalable graphics that look sharp at any size.">
+                    <p class="font-semibold text-xl">Adobe Illustrator</p>
+                </div>
+
+                <!-- Premiere Pro -->
+                <div id="skill-premiere" class="skill-card bg-gray-800 p-8 rounded-lg flex items-center justify-center modal-clickable"
+                     data-image-src="https://placehold.co/600x400/00002D/EA77FF?text=Video+Editing"
+                     data-title="Adobe Premiere Pro"
+                     data-description="For video editing and motion graphics, Premiere Pro is my go-to tool. I use it to bring brand stories to life, creating engaging promotional videos and animations like the 'Cafe Arko' brand identity piece.">
+                    <p class="font-semibold text-xl">Adobe Premiere Pro</p>
+                </div>
+
+                <!-- Photoshop -->
+                <div id="skill-photoshop" class="skill-card bg-gray-800 p-8 rounded-lg flex items-center justify-center modal-clickable"
+                     data-image-src="https://i.imgur.com/oZcuwXM.png"
+                     data-title="Adobe Photoshop"
+                     data-description="Photoshop is essential for my workflow, from photo editing and retouching to creating stunning mockups. I use it to prepare assets and showcase my designs in realistic, professional contexts.">
+                    <p class="font-semibold text-xl">Adobe Photoshop</p>
+                </div>
+
+                <!-- Canva -->
+                <div id="skill-canva" class="skill-card bg-gray-800 p-8 rounded-lg flex items-center justify-center modal-clickable"
+                     data-image-src="https://placehold.co/600x400/2E338D/ffffff?text=Social+Media+Designs"
+                     data-title="Canva"
+                     data-description="Canva is an excellent tool for rapid prototyping and creating web-ready marketing materials. I leverage it to quickly design social media graphics, presentations, and other content for clients.">
+                    <p class="font-semibold text-xl">Canva</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-20 lg:py-32 text-center">
+            <h2 class="text-4xl font-bold mb-4 animated-gradient-text">My Work</h2>
+            <p class="text-lg text-gray-400 mb-12">A selection of my recent projects.</p>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1: Video Project -->
+                <div class="project-card bg-gray-800 rounded-lg overflow-hidden">
+                    <div class="h-56 bg-black">
+                         <iframe class="w-full h-full" src="https://www.youtube.com/embed/SFC_CPYNhMk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Cafe Arko : Brand identity</h3>
+                        <p class="text-gray-400">A complete brand identity design for 'Cafe Arko'. This project showcases the brand's story and aesthetic in a dynamic motion graphics piece, covering everything from the logo to the overall visual language.</p>
+                    </div>
+                </div>
+                <!-- Project 2: Cafe Arko Branding -->
+                <div id="project-arko-card" class="project-card bg-gray-800 rounded-lg overflow-hidden modal-clickable">
+                    <img src="https://i.imgur.com/oZcuwXM.png" alt="Cafe Arko Branding" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Café Arko : Logo & Brand Identity</h3>
+                        <p class="text-gray-400">Developed a complete logo and brand identity system for Café Arko. The design focuses on a warm, inviting aesthetic, suitable for both print and digital applications.</p>
+                    </div>
+                </div>
+                <!-- Project 3: Greenagy Logo -->
+                <div id="project-greenagy-card" class="project-card bg-gray-800 rounded-lg overflow-hidden modal-clickable">
+                    <img src="https://i.imgur.com/CgNLwWO.png" alt="Greenagy Logo Design" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Greenagy: Logo Design</h3>
+                        <p class="text-gray-400">A modern and clean logo for Greenagy, a brand focused on sustainable energy. The mark combines a leaf motif with a dynamic arrow, representing growth and forward movement.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 lg:py-32 text-center">
+            <h2 class="text-4xl font-bold mb-4 animated-gradient-text">Let's Create Together</h2>
+            <p class="text-lg text-gray-400 mb-8 max-w-2xl mx-auto">Have a project in mind or just want to say hello? I'd love to hear from you.</p>
+            <div class="flex flex-col md:flex-row items-center justify-center gap-6">
+                <a href="mailto:fuadhassan98989@gmail.com" class="inline-block bg-sky-500 text-white font-bold py-3 px-6 rounded-lg hover:bg-sky-600 transition-colors">
+                    Email Me
+                </a>
+                <a href="https://www.linkedin.com/in/fuadhassansami" target="_blank" rel="noopener noreferrer" class="inline-block bg-gray-700 text-white font-bold py-3 px-6 rounded-lg hover:bg-gray-600 transition-colors">
+                    Connect on LinkedIn
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 py-6 text-center">
+        <p class="text-gray-500">&copy; 2025 Fuad Hassan. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Image Modal -->
+    <div id="image-modal" class="modal hidden fixed inset-0 bg-black bg-opacity-80 z-50 items-center justify-center p-4">
+        <div class="relative bg-gray-900 p-2 rounded-lg max-w-4xl w-full flex flex-col md:flex-row gap-4">
+            <img id="modal-image" src="" alt="Full size project image" class="w-full md:w-2/3 h-auto object-contain max-h-[85vh] rounded-md">
+            <div id="modal-text-content" class="w-full md:w-1/3 p-4 text-left">
+                <h3 id="modal-title" class="text-2xl font-bold mb-2 gradient-text"></h3>
+                <p id="modal-description" class="text-gray-300"></p>
+            </div>
+            <button id="modal-close-button" class="absolute -top-4 -right-4 text-white bg-sky-500 rounded-full p-2 hover:bg-sky-600 transition-colors">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+        </div>
+    </div>
+
+
+    <!-- JavaScript -->
+    <script>
+        // Wait for the DOM to be fully loaded before running scripts
+        window.addEventListener('DOMContentLoaded', () => {
+            
+            // --- Mobile Menu Logic ---
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
+
+                document.querySelectorAll('#mobile-menu a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileMenu.classList.add('hidden');
+                    });
+                });
+            }
+
+            // --- Modal Logic ---
+            const imageModal = document.getElementById('image-modal');
+            const modalImage = document.getElementById('modal-image');
+            const modalTextContent = document.getElementById('modal-text-content');
+            const modalTitle = document.getElementById('modal-title');
+            const modalDescription = document.getElementById('modal-description');
+            const modalCloseButton = document.getElementById('modal-close-button');
+            
+            // --- Open Modal Function ---
+            const openModal = (imageSrc, title = '', description = '') => {
+                modalImage.src = imageSrc;
+                if (title && description) {
+                    modalTitle.textContent = title;
+                    modalDescription.textContent = description;
+                    modalTextContent.classList.remove('hidden');
+                } else {
+                    modalTextContent.classList.add('hidden');
+                }
+                imageModal.classList.remove('hidden');
+                imageModal.classList.add('flex');
+            };
+
+            // --- Event Listeners for Project Cards ---
+            document.querySelectorAll('.project-card.modal-clickable').forEach(card => {
+                card.addEventListener('click', () => {
+                    const imageSrc = card.querySelector('img').src;
+                    openModal(imageSrc);
+                });
+            });
+
+            // --- Event Listeners for Skill Cards ---
+            document.querySelectorAll('.skill-card.modal-clickable').forEach(card => {
+                card.addEventListener('click', () => {
+                    const imageSrc = card.dataset.imageSrc;
+                    const title = card.dataset.title;
+                    const description = card.dataset.description;
+                    openModal(imageSrc, title, description);
+                });
+            });
+
+            // --- Close Modal Function ---
+            const closeModal = () => {
+                if (imageModal) {
+                    imageModal.classList.add('hidden');
+                    imageModal.classList.remove('flex');
+                    modalImage.src = ""; // Clear src to stop video/gif playback
+                }
+            };
+
+            if (modalCloseButton) {
+                modalCloseButton.addEventListener('click', closeModal);
+            }
+            
+            if (imageModal) {
+                imageModal.addEventListener('click', (event) => {
+                    if (event.target === imageModal) {
+                        closeModal();
+                    }
+                });
+            }
+        });
+    </script>
+
+</body>
+</html>
